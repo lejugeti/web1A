@@ -1,0 +1,10 @@
+.contenant
+{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 300px;
+    justify-content: space-around;
+    margin: auto;
+
+}

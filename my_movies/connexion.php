@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="css/inscription.css"/>
+  <link rel="stylesheet" href="css/connexion.css"/>
 
 
 </head>
@@ -36,12 +36,25 @@
     </nav>
 
     <div class="contenant">
-        <h1> INSCRIPTION REUSSIE ! </h1>
-        <img src="images/brent_rambo.gif" title="brent rambooooo" />
+
+        <form method="POST" action="#">
+            <h2> Connexion </h2>
+
+            <div class="form-group">
+                <label for="login">Votre login :</label>
+                <input type="text" class="form-control" name="login" id="login" aria-describedby="emailHelp" placeholder="Entrez votre login">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Votre mot de passe :</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Votre mdp (40 caractères max)">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
     </div>
-
-
-
 
 
 </body>

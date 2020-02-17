@@ -26,11 +26,10 @@
             </div>
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
-                <!-- <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-                <span class="navbar-toggler-icon"></span> -->
+
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">S'inscrire</a>
-                    <a class="dropdown-item" href="#">Se connecter</a>
+                    <a class="dropdown-item" href="inscription.php">S'inscrire</a>
+                    <a class="dropdown-item" href="connexion.php">Se connecter</a>
                 </div>
                 </button>
             </div>

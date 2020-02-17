@@ -36,12 +36,21 @@
     </nav>
 
     <div class="contenant">
+        <br/><br/><br/>
         <h1> INSCRIPTION REUSSIE ! </h1>
         <img src="images/brent_rambo.gif" title="brent rambooooo" />
     </div>
 
 
+    <?php
+        $bdd = new PDO("mysql:dbname=my_movies;host=localhost", "aparize", "123456");
+        $req = $bdd -> prepare("INSERT INTO users (login, password) VALUE('aaaa', 'bbbb')");
+        $login = $_POST["login"];
+        $password = $_POST["password"];
+        $req -> execute();
+        #$req -> execute(array($login, $password));
 
+     ?>
 
 
 </body>
