@@ -8,7 +8,6 @@
 
   <link rel="stylesheet" href="css/descriptions.css"/>
 
-  <title>Document</title>
 
 </head>
 
@@ -19,7 +18,8 @@
 
     <?php
         $bdd = new PDO("mysql:dbname=my_movies;host=localhost", "aparize", "123456");
-        $req = $bdd -> query("SELECT * FROM films WHERE id=$_GET['id']");
+        $id = $_GET['id'];
+        $req = $bdd -> query("SELECT * FROM films WHERE id=$id");
         $res = $req->fetch();
      ?>
 
@@ -43,7 +43,7 @@
 
     </nav>
 
-    <div id="flex_div">
+    <div>
         <div class="conteneur">
             <div id="image">
                 <img src=<?php echo $res['image'];?> title='Graal'/>

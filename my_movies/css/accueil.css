@@ -1,9 +1,21 @@
 .contenant
 {
     display: flex;
-    border: 1px solid;
+    flex-direction: column;
     border-color: rgba(140,140,140);
     width: 80%;
     height: 500px;
-    justify-content: space-around
+    justify-content: space-around;
+    margin: auto;
+
+}
+
+.contenu
+{
+
+}
+
+.contenant a
+{
+    font-size: 30px;
 }
