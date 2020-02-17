@@ -1,0 +1,9 @@
+.contenant
+{
+    display: flex;
+    border: 1px solid;
+    border-color: rgba(140,140,140);
+    width: 80%;
+    height: 500px;
+    justify-content: space-around
+}

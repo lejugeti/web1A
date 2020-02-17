@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/descriptions.css"/>
 
   <title>Document</title>
 
@@ -17,6 +17,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <?php
+        $bdd = new PDO("mysql:dbname=my_movies;host=localhost", "aparize", "123456");
+        $req = $bdd -> query("SELECT * FROM films WHERE id=$_GET['id']");
+        $res = $req->fetch();
+     ?>
 
     <nav class="navbar navbar-expand-md bg-light border d-flex flex-row justify-content-around">
             <div>
@@ -39,7 +44,20 @@
     </nav>
 
     <div id="flex_div">
-        <div class="description"> Bijour</div>
+        <div class="conteneur">
+            <div id="image">
+                <img src=<?php echo $res['image'];?> title='Graal'/>
+            </div>
+
+            <div id="description">
+                <h2><?php echo $res["nom"]; ?> </h2>
+                <h3> <?php echo $res["realisateur"]; ?>, <?php echo $res["annee_sortie"]; ?> </h3>
+
+                <?php echo $res["description_longue"]; ?>
+
+            </div>
+
+        </div>
 
 
 

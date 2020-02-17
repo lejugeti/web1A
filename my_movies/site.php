@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+  <link rel="stylesheet" href="css/accueil.css"
+
   <title>Document</title>
 
 </head>
@@ -34,6 +36,30 @@
                 </button>
             </div>
     </nav>
+
+    <?php
+
+        $bdd = new PDO("mysql:host=localhost;dbname=my_movies", "aparize", "123456");
+        $req = $bdd -> query("SELECT nom,description_courte FROM films");
+        $res = $req -> fetch();
+     ?>
+
+    <div class="contenant">
+        <?php
+
+            foreach($res as $ligne)
+            {
+                echo "<p>";
+                echo $ligne["nom"];
+                echo "<br/>";
+                echo $ligne["description_courte"];
+                echo "</p>";
+
+            }
+
+         ?>
+
+    </div>
 
 </body>
 </html>

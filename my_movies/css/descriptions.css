@@ -1,0 +1,44 @@
+#flex_div
+{
+    display: flex;
+    flex: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+
+}
+
+.conteneur
+{
+    display: flex;
+    border: 1px solid;
+    border-color: rgba(140,140,140);
+    background-color: rgb(200,200,200);
+    width: 80%;
+    height: 500px;
+    justify-content: space-around
+}
+
+#image
+{
+    width: 40%;
+    background-color: blue;
+}
+
+#description
+{
+    width: 59%;
+    background-color: rgba(250,0,0, 0.1);
+
+
+}
+
+#description, #image
+{
+    margin: 30px;
+}
+
+#image img
+{
+    max-height: 100%;
+}
