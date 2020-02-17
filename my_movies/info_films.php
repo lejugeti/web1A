@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+  <link rel="stylesheet" href="css/style.css"/>
+
   <title>Document</title>
 
 </head>
@@ -33,7 +35,16 @@
                 </div>
                 </button>
             </div>
+
     </nav>
+
+    <div id="flex_div">
+        <div class="description"> Bijour</div>
+
+
+
+
+    </div>
 
 </body>
 </html>
