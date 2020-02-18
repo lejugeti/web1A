@@ -2,20 +2,18 @@
 {
     display: flex;
     flex-direction: column;
-    border-color: rgba(140,140,140);
     width: 80%;
     height: 500px;
     justify-content: space-around;
     margin: auto;
-
-}
-
-.contenu
-{
-
 }
 
 .contenant a
 {
     font-size: 30px;
+}
+
+.contenant hr
+{
+    border: solid rgb(100,100,100) 0.5px;
 }

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
+<?php if(isset($_SESSION["login"])) $user = $_SESSION["login"]; else $user = "User";?>
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -25,7 +28,9 @@
                 </button>
             </div>
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+                <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $user;?>
+                </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="inscription.php">S'inscrire</a>
@@ -53,6 +58,11 @@
             <button type="submit" class="btn btn-primary">Submit</button>
 
             </form>
+
+            <div>
+                <hr>
+            </div>
+            <footer> Réalisé par Antman, BOOOOOM ♥</footer>
     </div>
 
 

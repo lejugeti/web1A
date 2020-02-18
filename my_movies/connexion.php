@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-
-<?php
-
-
-
-?>
+<?php session_start(); ?>
+<?php if(isset($_SESSION["login"])) $user = $_SESSION["login"]; else $user = "User";?>
 
 <html lang="fr">
 <head>
@@ -17,6 +13,39 @@
 
 
 </head>
+
+<?php
+$erreur = false;
+if(isset($_POST["login"]))
+{
+
+    $bdd = new PDO("mysql:host=localhost;dbname=my_movies", "aparize", "123456");
+    $requete = $bdd -> prepare("SELECT * from users where login=?");
+    $requete -> execute(array($_POST["login"]));
+    $resultat = $requete -> fetchAll();
+
+    if(sizeof($resultat)== 0)
+    {
+        $erreur = true;
+    }
+    else
+    {
+        $login = $resultat[0]["login"];
+        if($resultat[0]["password"] != $_POST["password"]){
+        $erreur = true;
+        }
+    }
+
+    if($erreur == false)
+    {
+        $_SESSION["login"] = $login;
+        header("Location: site.php?login=$login");
+        exit();
+    }
+}
+?>
+
+
 
 <body>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -32,7 +61,9 @@
                 </button>
             </div>
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+                <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $user;?>
+                </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="inscription.php">S'inscrire</a>
@@ -44,7 +75,7 @@
 
     <div class="contenant">
 
-        <form method="POST" action="#">
+        <form method="POST" action="connexion.php">
             <h2> Connexion </h2>
 
             <div class="form-group">
@@ -60,9 +91,17 @@
 
             <button type="submit" class="btn btn-primary">Submit</button>
 
+            <?php if($erreur) echo "<small> Votre login ou mdp est incorrect </small>"; ?>
+
             </form>
+
+            <div>
+                <hr>
+            </div>
+            <footer> Réalisé par Antman, BOOOOOM ♥</footer>
     </div>
 
-
 </body>
+
+
 </html>

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">

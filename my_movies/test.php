@@ -1,48 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<?php
+echo $_POST["login"];
+$bdd = new PDO("mysql:host=localhost;dbname=my_movies", "aparize", "123456");
+$req = $bdd -> prepare("SELECT * from users where login=?");
+$req -> execute(array($_POST["login"]));
+$res = $req -> fetchAll();
 
-  <link rel="stylesheet" href="css/inscription.css"/>
-
-
-</head>
-
-<body>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+echo $res[0]["login"];
 
 
-    <nav class="navbar navbar-expand-md bg-light border d-flex flex-row justify-content-around">
-            <div>
-                <a class="navbar-brand text-secondary" href="site.php">MyMovies</a>
-                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
-
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="inscription.php">S'inscrire</a>
-                    <a class="dropdown-item" href="connexion.php">Se connecter</a>
-                </div>
-                </button>
-            </div>
-    </nav>
-
-    <div class="contenant">
-        <h1> INSCRIPTION REUSSIE ! </h1>
-        <img src="images/brent_rambo.gif" title="brent rambooooo" />
-    </div>
-
-
-
-
-
-</body>
-</html>
+?>
