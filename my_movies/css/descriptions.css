@@ -12,7 +12,7 @@
 
 #image
 {
-    width: 40%;
+    max-height: : 400px;
 }
 
 #description
@@ -28,5 +28,5 @@
 
 #image img
 {
-    max-width: 100%;
+    width: 20em;
 }

@@ -44,11 +44,10 @@
 
     <?php
         $bdd = new PDO("mysql:dbname=my_movies;host=localhost", "aparize", "123456");
-        $req = $bdd -> prepare("INSERT INTO users (login, password) VALUE('aaaa', 'bbbb')");
+        $req = $bdd -> prepare("INSERT INTO users (login, password) VALUE(?, ?)");
         $login = $_POST["login"];
         $password = $_POST["password"];
-        $req -> execute();
-        #$req -> execute(array($login, $password));
+        $req -> execute(array($login, $password));
 
      ?>
 
